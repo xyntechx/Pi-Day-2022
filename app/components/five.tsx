@@ -8,7 +8,7 @@ export default function Five() {
     return (
         <main className="main">
             <p>Five</p>
-            <a href="/1">Day 5, Qn 1</a>
+            <a href="/25">Day 5, Qn 1</a>
         </main>
     );
 }

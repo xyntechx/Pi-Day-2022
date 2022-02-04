@@ -84,7 +84,8 @@ export default function Index() {
         default:
             return (
                 <main className="main">
-                    <p>Wait till March 8, 2022!</p>
+                    <h1 className="title">Pi Day 🥧</h1>
+                    <p className="text">Wait till March 8, 2022!</p>
                 </main>
             );
     }

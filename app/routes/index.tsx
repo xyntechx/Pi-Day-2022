@@ -12,9 +12,11 @@ export default function Index() {
 
     return (
         <main className="main">
-            <h1 className="title">Pi Day 🥧</h1>
             {currDate.getTime() < dayOneDate.getTime() ? (
-                <p className="text">Come back on March 8, 2022!</p>
+                <>
+                    <h1 className="title">Pi Day 🥧</h1>
+                    <p className="text">Come back on March 8, 2022!</p>
+                </>
             ) : (
                 <Days />
             )}

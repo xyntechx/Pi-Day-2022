@@ -27,69 +27,90 @@ export default function Days() {
     const jokeDate = new Date(2022, 2, 14);
 
     return (
-        <section className="days">
-            <a
-                href={currDate.getTime() >= dayOneDate.getTime() ? "/1" : "/"}
-                className={
-                    currDate.getTime() >= dayOneDate.getTime()
-                        ? "day"
-                        : "disabled"
-                }
-            >
-                Day 1
-            </a>
-            <a
-                href={currDate.getTime() >= dayTwoDate.getTime() ? "/8" : "/"}
-                className={
-                    currDate.getTime() >= dayTwoDate.getTime()
-                        ? "day"
-                        : "disabled"
-                }
-            >
-                Day 2
-            </a>
-            <a
-                href={
-                    currDate.getTime() >= dayThreeDate.getTime() ? "/15" : "/"
-                }
-                className={
-                    currDate.getTime() >= dayThreeDate.getTime()
-                        ? "day"
-                        : "disabled"
-                }
-            >
-                Day 3
-            </a>
-            <a
-                href={currDate.getTime() >= dayFourDate.getTime() ? "/20" : "/"}
-                className={
-                    currDate.getTime() >= dayFourDate.getTime()
-                        ? "day"
-                        : "disabled"
-                }
-            >
-                Day 4
-            </a>
-            <a
-                href={currDate.getTime() >= dayFiveDate.getTime() ? "/25" : "/"}
-                className={
-                    currDate.getTime() >= dayFiveDate.getTime()
-                        ? "day"
-                        : "disabled"
-                }
-            >
-                Day 5
-            </a>
-            <a
-                href={currDate.getTime() >= daySixDate.getTime() ? "/26" : "/"}
-                className={
-                    currDate.getTime() >= daySixDate.getTime()
-                        ? "day"
-                        : "disabled"
-                }
-            >
-                Day 6
-            </a>
-        </section>
+        <>
+            <section className="days">
+                <a
+                    href={
+                        currDate.getTime() >= dayOneDate.getTime() ? "/1" : "/"
+                    }
+                    className={
+                        currDate.getTime() >= dayOneDate.getTime()
+                            ? "day"
+                            : "disabled"
+                    }
+                >
+                    Day 1
+                </a>
+                <a
+                    href={
+                        currDate.getTime() >= dayTwoDate.getTime() ? "/8" : "/"
+                    }
+                    className={
+                        currDate.getTime() >= dayTwoDate.getTime()
+                            ? "day"
+                            : "disabled"
+                    }
+                >
+                    Day 2
+                </a>
+                <a
+                    href={
+                        currDate.getTime() >= dayThreeDate.getTime()
+                            ? "/15"
+                            : "/"
+                    }
+                    className={
+                        currDate.getTime() >= dayThreeDate.getTime()
+                            ? "day"
+                            : "disabled"
+                    }
+                >
+                    Day 3
+                </a>
+            </section>
+            <h1 className="title">Pi Day 🥧</h1>
+            <section className="days">
+                <a
+                    href={
+                        currDate.getTime() >= dayFourDate.getTime()
+                            ? "/20"
+                            : "/"
+                    }
+                    className={
+                        currDate.getTime() >= dayFourDate.getTime()
+                            ? "day"
+                            : "disabled"
+                    }
+                >
+                    Day 4
+                </a>
+                <a
+                    href={
+                        currDate.getTime() >= dayFiveDate.getTime()
+                            ? "/25"
+                            : "/"
+                    }
+                    className={
+                        currDate.getTime() >= dayFiveDate.getTime()
+                            ? "day"
+                            : "disabled"
+                    }
+                >
+                    Day 5
+                </a>
+                <a
+                    href={
+                        currDate.getTime() >= daySixDate.getTime() ? "/26" : "/"
+                    }
+                    className={
+                        currDate.getTime() >= daySixDate.getTime()
+                            ? "day"
+                            : "disabled"
+                    }
+                >
+                    Day 6
+                </a>
+            </section>
+        </>
     );
 }

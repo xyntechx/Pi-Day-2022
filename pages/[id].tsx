@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -38,12 +39,51 @@ const Meta: NextPage = () => {
 };
 
 const Q1: NextPage = () => {
-    const answer = useState("");
+    const [answer, setAnswer] = useState("");
+    const [answered, setAnswered] = useState(false);
+    const [correct, setCorrect] = useState(false);
+    const CORRECT = process.env.NEXT_PUBLIC_Q1;
+
+    const checkAnswer = () => {
+        setAnswered(true);
+        if (answer === CORRECT) setCorrect(true);
+    };
 
     return (
         <main className={styles.main}>
             <Meta />
-            <p>Question 1</p>
+            <h1 className={styles.title}>What is 1 + 1?</h1>
+            <input
+                type="text"
+                placeholder="My Answer"
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                className={styles.input}
+                onFocus={() => setAnswered(false)}
+            />
+            <button className={styles.button} onClick={() => checkAnswer()}>
+                Check My Answer
+            </button>
+            <br />
+            {correct ? (
+                <>
+                    <p className={styles.description}>Correct!</p>
+                    <br />
+                    <Link href="/2">
+                        <a className={styles.button}>Next Question</a>
+                    </Link>
+                </>
+            ) : (
+                <>
+                    {answered ? (
+                        <p className={styles.description}>
+                            Oops! That's not right...
+                        </p>
+                    ) : (
+                        <></>
+                    )}
+                </>
+            )}
         </main>
     );
 };

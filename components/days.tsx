@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const Days: NextPage = () => {
     const currDate = new Date();
-    // const dayOneDate = new Date(2022, 2, 8);
-    const dayOneDate = new Date(2022, 0, 31);
+    const dayOneDate = new Date(2022, 2, 8);
+    // const dayOneDate = new Date(2022, 0, 31);
 
     const dayTwoDate = new Date(2022, 2, 9);
     // const dayTwoDate = new Date(2022, 1, 1);
@@ -26,87 +27,105 @@ const Days: NextPage = () => {
     return (
         <>
             <section className={styles.days}>
-                <a
+                <Link
                     href={
                         currDate.getTime() >= dayOneDate.getTime() ? "/1" : "/"
                     }
-                    className={
-                        currDate.getTime() >= dayOneDate.getTime()
-                            ? styles.day
-                            : styles.disabled
-                    }
                 >
-                    Day 1
-                </a>
-                <a
+                    <a
+                        className={
+                            currDate.getTime() >= dayOneDate.getTime()
+                                ? styles.day
+                                : styles.disabled
+                        }
+                    >
+                        Day 1
+                    </a>
+                </Link>
+                <Link
                     href={
                         currDate.getTime() >= dayTwoDate.getTime() ? "/8" : "/"
                     }
-                    className={
-                        currDate.getTime() >= dayTwoDate.getTime()
-                            ? styles.day
-                            : styles.disabled
-                    }
                 >
-                    Day 2
-                </a>
-                <a
+                    <a
+                        className={
+                            currDate.getTime() >= dayTwoDate.getTime()
+                                ? styles.day
+                                : styles.disabled
+                        }
+                    >
+                        Day 2
+                    </a>
+                </Link>
+                <Link
                     href={
                         currDate.getTime() >= dayThreeDate.getTime()
                             ? "/15"
                             : "/"
                     }
-                    className={
-                        currDate.getTime() >= dayThreeDate.getTime()
-                            ? styles.day
-                            : styles.disabled
-                    }
                 >
-                    Day 3
-                </a>
+                    <a
+                        className={
+                            currDate.getTime() >= dayThreeDate.getTime()
+                                ? styles.day
+                                : styles.disabled
+                        }
+                    >
+                        Day 3
+                    </a>
+                </Link>
             </section>
             <h1 className={styles.title}>Pi Day 🥧</h1>
             <section className={styles.days}>
-                <a
+                <Link
                     href={
                         currDate.getTime() >= dayFourDate.getTime()
                             ? "/20"
                             : "/"
                     }
-                    className={
-                        currDate.getTime() >= dayFourDate.getTime()
-                            ? styles.day
-                            : styles.disabled
-                    }
                 >
-                    Day 4
-                </a>
-                <a
+                    <a
+                        className={
+                            currDate.getTime() >= dayFourDate.getTime()
+                                ? styles.day
+                                : styles.disabled
+                        }
+                    >
+                        Day 4
+                    </a>
+                </Link>
+                <Link
                     href={
                         currDate.getTime() >= dayFiveDate.getTime()
                             ? "/25"
                             : "/"
                     }
-                    className={
-                        currDate.getTime() >= dayFiveDate.getTime()
-                            ? styles.day
-                            : styles.disabled
-                    }
                 >
-                    Day 5
-                </a>
-                <a
+                    <a
+                        className={
+                            currDate.getTime() >= dayFiveDate.getTime()
+                                ? styles.day
+                                : styles.disabled
+                        }
+                    >
+                        Day 5
+                    </a>
+                </Link>
+                <Link
                     href={
                         currDate.getTime() >= daySixDate.getTime() ? "/26" : "/"
                     }
-                    className={
-                        currDate.getTime() >= daySixDate.getTime()
-                            ? styles.day
-                            : styles.disabled
-                    }
                 >
-                    Day 6
-                </a>
+                    <a
+                        className={
+                            currDate.getTime() >= daySixDate.getTime()
+                                ? styles.day
+                                : styles.disabled
+                        }
+                    >
+                        Day 6
+                    </a>
+                </Link>
             </section>
         </>
     );

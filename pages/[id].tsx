@@ -77,7 +77,7 @@ const Q1: NextPage = () => {
                 <>
                     {answered ? (
                         <p className={styles.description}>
-                            Oops! That's not right...
+                            Oops! That&apos;s not right...
                         </p>
                     ) : (
                         <></>

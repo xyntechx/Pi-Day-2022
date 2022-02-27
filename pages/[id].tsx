@@ -9,15 +9,36 @@ const Quiz: NextPage = () => {
     const router = useRouter();
     const { id } = router.query;
 
+    const currDate = new Date();
+    // const dayOneDate = new Date(2022, 2, 8);
+    const dayOneDate = new Date(2022, 0, 31);
+
+    const dayTwoDate = new Date(2022, 2, 9);
+    // const dayTwoDate = new Date(2022, 1, 1);
+
+    const dayThreeDate = new Date(2022, 2, 10);
+    // const dayThreeDate = new Date(2022, 1, 2);
+
+    const dayFourDate = new Date(2022, 2, 11);
+    // const dayFourDate = new Date(2022, 1, 3);
+
+    const dayFiveDate = new Date(2022, 2, 12);
+    // const dayFiveDate = new Date(2022, 1, 4);
+
+    const daySixDate = new Date(2022, 2, 13);
+    // const daySixDate = new Date(2022, 1, 5);
+
     switch (id) {
         case "1":
-            return <Q1 />;
+            if (currDate.getTime() >= dayOneDate.getTime()) return <Q1 />;
         case "2":
-            return <Q2 />;
-        case "2":
-            return <Q3 />;
+            if (currDate.getTime() >= dayOneDate.getTime()) return <Q2 />;
+        case "3":
+            if (currDate.getTime() >= dayOneDate.getTime()) return <Q3 />;
+        case "4":
+            if (currDate.getTime() >= dayOneDate.getTime()) return <Q4 />;
         default:
-            return <h1>hi?</h1>;
+            return <Invalid />;
     }
 };
 
@@ -40,6 +61,19 @@ const Meta: NextPage = () => {
     );
 };
 
+const Invalid: NextPage = () => {
+    return (
+        <main className={styles.main}>
+            <Meta />
+            <h1 className={styles.title}>Oops! This page does not exist!</h1>
+            <br />
+            <Link href="/">
+                <a className={styles.button}>Back to Home</a>
+            </Link>
+        </main>
+    );
+};
+
 const Q1: NextPage = () => {
     const [answer, setAnswer] = useState("");
     const [answered, setAnswered] = useState(false);
@@ -54,7 +88,7 @@ const Q1: NextPage = () => {
     return (
         <main className={styles.main}>
             <Meta />
-            <h1 className={styles.title}>What is 1 + 1?</h1>
+            <h1 className={styles.question}>What is 1 + 1?</h1>
             <input
                 type="text"
                 placeholder="My Answer"
@@ -105,7 +139,7 @@ const Q2: NextPage = () => {
     return (
         <main className={styles.main}>
             <Meta />
-            <h1 className={styles.title}>
+            <h1 className={styles.question}>
                 Solve for x, where x = 162*172839506
             </h1>
             <input
@@ -127,7 +161,7 @@ const Q2: NextPage = () => {
                         Fun fact: it&apos; a palindrome!
                     </p>
                     <br />
-                    <Link href="/2">
+                    <Link href="/3">
                         <a className={styles.button}>Next Question</a>
                     </Link>
                 </>
@@ -160,7 +194,7 @@ const Q3: NextPage = () => {
     return (
         <main className={styles.main}>
             <Meta />
-            <h1 className={styles.title}>Solve 8/2(2+2)</h1>
+            <h1 className={styles.question}>Solve 8/2(2+2)</h1>
             <input
                 type="text"
                 placeholder="My Answer"
@@ -180,7 +214,63 @@ const Q3: NextPage = () => {
                         8/2 = 4, then 2+2 = 4, finally 4*4 = 16
                     </p>
                     <br />
-                    <Link href="/2">
+                    <Link href="/4">
+                        <a className={styles.button}>Next Question</a>
+                    </Link>
+                </>
+            ) : (
+                <>
+                    {answered ? (
+                        <p className={styles.description}>
+                            Oops! That&apos;s not right...
+                        </p>
+                    ) : (
+                        <></>
+                    )}
+                </>
+            )}
+        </main>
+    );
+};
+
+const Q4: NextPage = () => {
+    const [answer, setAnswer] = useState("");
+    const [answered, setAnswered] = useState(false);
+    const [correct, setCorrect] = useState(false);
+    const CORRECT = process.env.NEXT_PUBLIC_Q4;
+
+    const checkAnswer = () => {
+        setAnswered(true);
+        if (answer === CORRECT) setCorrect(true);
+    };
+
+    return (
+        <main className={styles.main}>
+            <Meta />
+            <h1 className={styles.question}>
+                Xavier has 10 apples. He then buys 2 more apples and 6 bananas.
+                If x:12 is the ratio of apples to bananas, what is x?
+            </h1>
+            <input
+                type="text"
+                placeholder="My Answer"
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                className={styles.input}
+                onFocus={() => setAnswered(false)}
+            />
+            <button className={styles.button} onClick={() => checkAnswer()}>
+                Check My Answer
+            </button>
+            <br />
+            {correct ? (
+                <>
+                    <p className={styles.description}>Correct!</p>
+                    <p className={styles.description}>
+                        When ratios were simple :&quot;)
+                    </p>
+                    <br />
+                    <Link href="/5">
                         <a className={styles.button}>Next Question</a>
                     </Link>
                 </>

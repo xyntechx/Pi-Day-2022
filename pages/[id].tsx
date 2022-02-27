@@ -37,6 +37,8 @@ const Quiz: NextPage = () => {
             if (currDate.getTime() >= dayOneDate.getTime()) return <Q3 />;
         case "4":
             if (currDate.getTime() >= dayOneDate.getTime()) return <Q4 />;
+        case "5":
+            if (currDate.getTime() >= dayOneDate.getTime()) return <Q5 />;
         default:
             return <Invalid />;
     }
@@ -271,6 +273,63 @@ const Q4: NextPage = () => {
                     </p>
                     <br />
                     <Link href="/5">
+                        <a className={styles.button}>Next Question</a>
+                    </Link>
+                </>
+            ) : (
+                <>
+                    {answered ? (
+                        <p className={styles.description}>
+                            Oops! That&apos;s not right...
+                        </p>
+                    ) : (
+                        <></>
+                    )}
+                </>
+            )}
+        </main>
+    );
+};
+
+const Q5: NextPage = () => {
+    const [answer, setAnswer] = useState("");
+    const [answered, setAnswered] = useState(false);
+    const [correct, setCorrect] = useState(false);
+    const CORRECT = process.env.NEXT_PUBLIC_Q5;
+
+    const checkAnswer = () => {
+        setAnswered(true);
+        if (answer === CORRECT) setCorrect(true);
+    };
+
+    return (
+        <main className={styles.main}>
+            <Meta />
+            <h1 className={styles.question}>
+                Ross pays $535 for a couch after incurring a 7% GST rate. What
+                was the price of the couch before GST? Exclude &quot;$&quot; in
+                your answer!
+            </h1>
+            <input
+                type="text"
+                placeholder="My Answer"
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                className={styles.input}
+                onFocus={() => setAnswered(false)}
+            />
+            <button className={styles.button} onClick={() => checkAnswer()}>
+                Check My Answer
+            </button>
+            <br />
+            {correct ? (
+                <>
+                    <p className={styles.description}>Correct!</p>
+                    <p className={styles.description}>
+                        pivot... Pivot... PIVOT!!! #F.R.I.E.N.D.S.
+                    </p>
+                    <br />
+                    <Link href="/6">
                         <a className={styles.button}>Next Question</a>
                     </Link>
                 </>

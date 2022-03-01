@@ -29,7 +29,8 @@
 .description {
     font-size: 2rem;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin: 0;
+    margin: 0 5rem;
+    text-align: center;
 }
 
 .days {
@@ -92,6 +93,7 @@
 
     .description {
         font-size: 1.2rem;
+        margin: 0 2rem;
     }
 }
 

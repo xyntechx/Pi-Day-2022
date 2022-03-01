@@ -193,7 +193,7 @@ const Quiz: NextPage = () => {
                         question={
                             "Don ran with a velocity v = x² - 7x, where x is the displacement in metres with respect to his starting point where he was stationary (x >= 7). What is his acceleration in m/s² when v = 8 m/s?"
                         }
-                        description={"NAPFA :0"}
+                        description={"NAPFA 🤯"}
                     />
                 );
             else {

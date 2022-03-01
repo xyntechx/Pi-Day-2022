@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             {currDate.getTime() < dayOneDate.getTime() ? (
                 <>
                     <h1 className={styles.title}>Pi Day 🥧</h1>
-                    <p className={styles.text}>Come back on March 8, 2022!</p>
+                    <p className={styles.subtitle}>Come back on March 8, 2022!</p>
                 </>
             ) : (
                 <Days />

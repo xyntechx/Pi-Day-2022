@@ -20,12 +20,18 @@ const Question: NextPage<Props> = ({
     const [answer, setAnswer] = useState("");
     const [answered, setAnswered] = useState(false);
     const [correct, setCorrect] = useState(false);
+    const letters = process.env.NEXT_PUBLIC_KEY!;
 
     useEffect(() => {
         setAnswer("");
         setAnswered(false);
         setCorrect(false);
     }, [index]);
+
+    useEffect(() => {
+        if (correct)
+            alert("✅ Correct! Save this letter: " + letters[index - 1]);
+    }, [correct]);
 
     const checkAnswer = () => {
         setAnswered(true);
@@ -52,7 +58,8 @@ const Question: NextPage<Props> = ({
                 <meta property="og:type" content="website" />
             </Head>
 
-            <h1 className={styles.question}>{question}</h1>
+            <h1 className={styles.question}>Question {index}</h1>
+            <p className={styles.description}>{question}</p>
             <input
                 type="text"
                 placeholder="My Answer"
@@ -67,8 +74,8 @@ const Question: NextPage<Props> = ({
             <br />
             {correct ? (
                 <>
-                    <p className={styles.description}>Correct!</p>
-                    <p className={styles.description}>{description}</p>
+                    <p className={styles.text}>Correct!</p>
+                    <p className={styles.text}>{description}</p>
                     <br />
                     <Link href={"/" + (Number(index) + 1).toString()}>
                         <a className={styles.button}>Next Question</a>
@@ -77,7 +84,7 @@ const Question: NextPage<Props> = ({
             ) : (
                 <>
                     {answered ? (
-                        <p className={styles.description}>
+                        <p className={styles.text}>
                             Oops! That&apos;s not right...
                         </p>
                     ) : (

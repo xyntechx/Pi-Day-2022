@@ -77,9 +77,17 @@ const Question: NextPage<Props> = ({
                     <p className={styles.text}>Correct!</p>
                     <p className={styles.text}>{description}</p>
                     <br />
-                    <Link href={"/" + (Number(index) + 1).toString()}>
-                        <a className={styles.button}>Next Question</a>
-                    </Link>
+                    {index < 26 ? (
+                        <Link href={"/" + (Number(index) + 1).toString()}>
+                            <a className={styles.button}>Next Question</a>
+                        </Link>
+                    ) : (
+                        <Link href={"/"}>
+                            <a className={styles.button}>
+                                Get the Joke on 3.14!
+                            </a>
+                        </Link>
+                    )}
                 </>
             ) : (
                 <>

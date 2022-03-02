@@ -5,24 +5,11 @@ import Link from "next/link";
 const Days: NextPage = () => {
     const currDate = new Date();
     const dayOneDate = new Date(2022, 2, 8);
-    // const dayOneDate = new Date(2022, 0, 31);
-
     const dayTwoDate = new Date(2022, 2, 9);
-    // const dayTwoDate = new Date(2022, 1, 1);
-
     const dayThreeDate = new Date(2022, 2, 10);
-    // const dayThreeDate = new Date(2022, 1, 2);
-
     const dayFourDate = new Date(2022, 2, 11);
-    // const dayFourDate = new Date(2022, 1, 3);
-
     const dayFiveDate = new Date(2022, 2, 12);
-    // const dayFiveDate = new Date(2022, 1, 4);
-
     const daySixDate = new Date(2022, 2, 13);
-    // const daySixDate = new Date(2022, 1, 5);
-
-    const jokeDate = new Date(2022, 2, 14);
 
     return (
         <>

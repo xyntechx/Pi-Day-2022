@@ -10,27 +10,16 @@ const Quiz: NextPage = () => {
     const { id } = router.query;
 
     const currDate = new Date();
-    // const dayOneDate = new Date(2022, 2, 8);
-    const dayOneDate = new Date(2022, 0, 31);
-
-    // const dayTwoDate = new Date(2022, 2, 9);
-    const dayTwoDate = new Date(2022, 1, 1);
-
-    // const dayThreeDate = new Date(2022, 2, 10);
-    const dayThreeDate = new Date(2022, 1, 2);
-
+    const dayOneDate = new Date(2022, 2, 8);
+    const dayTwoDate = new Date(2022, 2, 9);
+    const dayThreeDate = new Date(2022, 2, 10);
     const dayFourDate = new Date(2022, 2, 11);
-    // const dayFourDate = new Date(2022, 1, 3);
-
     const dayFiveDate = new Date(2022, 2, 12);
-    // const dayFiveDate = new Date(2022, 1, 4);
-
     const daySixDate = new Date(2022, 2, 13);
-    // const daySixDate = new Date(2022, 1, 5);
 
     switch (id) {
         case "1":
-            if (currDate.getTime() >= dayOneDate.getTime())
+            if (currDate.getTime() >= dayOneDate.getTime()) {
                 return (
                     <Question
                         index={1}
@@ -39,8 +28,19 @@ const Quiz: NextPage = () => {
                         description={"Nice and easy 😁"}
                     />
                 );
+            } else {
+                return (
+                    <Later
+                        date={(
+                            dayOneDate.getDate().toString() +
+                            "/" +
+                            (dayOneDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
         case "2":
-            if (currDate.getTime() >= dayOneDate.getTime())
+            if (currDate.getTime() >= dayOneDate.getTime()) {
                 return (
                     <Question
                         index={2}
@@ -49,8 +49,19 @@ const Quiz: NextPage = () => {
                         description={"Fun fact: it's a palindrome!"}
                     />
                 );
+            } else {
+                return (
+                    <Later
+                        date={(
+                            dayOneDate.getDate().toString() +
+                            "/" +
+                            (dayOneDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
         case "3":
-            if (currDate.getTime() >= dayOneDate.getTime())
+            if (currDate.getTime() >= dayOneDate.getTime()) {
                 return (
                     <Question
                         index={3}
@@ -59,8 +70,19 @@ const Quiz: NextPage = () => {
                         description={"8/2 = 4, then 2+2 = 4, finally 4*4 = 16"}
                     />
                 );
+            } else {
+                return (
+                    <Later
+                        date={(
+                            dayOneDate.getDate().toString() +
+                            "/" +
+                            (dayOneDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
         case "4":
-            if (currDate.getTime() >= dayOneDate.getTime())
+            if (currDate.getTime() >= dayOneDate.getTime()) {
                 return (
                     <Question
                         index={4}
@@ -71,8 +93,19 @@ const Quiz: NextPage = () => {
                         description={"When ratios were simple :')"}
                     />
                 );
+            } else {
+                return (
+                    <Later
+                        date={(
+                            dayOneDate.getDate().toString() +
+                            "/" +
+                            (dayOneDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
         case "5":
-            if (currDate.getTime() >= dayOneDate.getTime())
+            if (currDate.getTime() >= dayOneDate.getTime()) {
                 return (
                     <Question
                         index={5}
@@ -85,8 +118,19 @@ const Quiz: NextPage = () => {
                         }
                     />
                 );
+            } else {
+                return (
+                    <Later
+                        date={(
+                            dayOneDate.getDate().toString() +
+                            "/" +
+                            (dayOneDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
         case "6":
-            if (currDate.getTime() >= dayOneDate.getTime())
+            if (currDate.getTime() >= dayOneDate.getTime()) {
                 return (
                     <Question
                         index={6}
@@ -99,8 +143,19 @@ const Quiz: NextPage = () => {
                         }
                     />
                 );
+            } else {
+                return (
+                    <Later
+                        date={(
+                            dayOneDate.getDate().toString() +
+                            "/" +
+                            (dayOneDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
         case "7":
-            if (currDate.getTime() >= dayOneDate.getTime())
+            if (currDate.getTime() >= dayOneDate.getTime()) {
                 return (
                     <Question
                         index={7}
@@ -113,6 +168,17 @@ const Quiz: NextPage = () => {
                         }
                     />
                 );
+            } else {
+                return (
+                    <Later
+                        date={(
+                            dayOneDate.getDate().toString() +
+                            "/" +
+                            (dayOneDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
         case "8":
             if (currDate.getTime() >= dayTwoDate.getTime())
                 return (
@@ -168,7 +234,7 @@ const Quiz: NextPage = () => {
                         index={10}
                         CORRECT={process.env.NEXT_PUBLIC_Q10}
                         question={
-                            "Given a function f(n), where n is a real number, and that f(x) + f(y) = 2f(x), is x necessarily equal to y? Answer 'Yes' or 'No', without the ''"
+                            "Given a function f(n), where n is a real number, and that f(x) + f(y) = 2f(x), is x necessarily equal to y? Answer 'Yes' or 'No', without the ''."
                         }
                         description={"Even... odd..."}
                     />
@@ -324,6 +390,242 @@ const Quiz: NextPage = () => {
                             dayThreeDate.getDate().toString() +
                             "/" +
                             (dayThreeDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "17":
+            if (currDate.getTime() >= dayThreeDate.getTime())
+                return (
+                    <Question
+                        index={17}
+                        CORRECT={process.env.NEXT_PUBLIC_Q17}
+                        question={
+                            "Given a function f(x) = y, if f'(x) > 0, does f(x) always cut the x-axis? Answer 'Yes' or 'No', without the ''."
+                        }
+                        description={"y = e^x is a counter-example!"}
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayThreeDate.getDate().toString() +
+                            "/" +
+                            (dayThreeDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "18":
+            if (currDate.getTime() >= dayThreeDate.getTime())
+                return (
+                    <Question
+                        index={18}
+                        CORRECT={process.env.NEXT_PUBLIC_Q18}
+                        question={
+                            "Milo drinks for 5 seconds from a full 1-litre bottle of water before running. Since he's not very thirsty, he drinks 20ml of water every second. He is then ready to run. After running, Milo is very thirsty, and he needs to finish up his bottle to quench his thirst before the next run. How fast must Milo drink if the next run starts in 20 seconds, in ml per second?"
+                        }
+                        description={
+                            "Does anyone know what is the normal water drinking rate for the average human?"
+                        }
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayThreeDate.getDate().toString() +
+                            "/" +
+                            (dayThreeDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "19":
+            if (currDate.getTime() >= dayThreeDate.getTime())
+                return (
+                    <Question
+                        index={19}
+                        CORRECT={process.env.NEXT_PUBLIC_Q19}
+                        question={
+                            "Jann is given a project by her teachers to complete within 10 weeks. There are a total of 6 broad tasks: planning, completing draft 1, waiting for feedback for draft 1, completing draft 2, waiting for feedback for draft 2, and completing the final draft. The 6 tasks consume different amounts of time in the ratio 2:5:2:6:2:11. How much time (in days) must she dedicate to completing the 3 drafts?"
+                        }
+                        description={
+                            "We should keep track of PW hours to verify this time distribution..."
+                        }
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayThreeDate.getDate().toString() +
+                            "/" +
+                            (dayThreeDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "20":
+            if (currDate.getTime() >= dayFourDate.getTime())
+                return (
+                    <Question
+                        index={20}
+                        CORRECT={process.env.NEXT_PUBLIC_Q20}
+                        question={
+                            "Tony has 70 minutes of homework to complete today. To help him concentrate, Tony enjoys listening to music while he does work. He has an unlimited numnber of songs to play, and each song is either 3 or 4 minutes long. Tony hates it when he finishes his work before or after finishing a song, so he always chooses a combination of songs to make sure that the total duration of the songs is exactly equal to the total duration of doing his homework. Tony also wants to listen to as many songs as possible. How many 3-minute songs will Tony play given his preferences?"
+                        }
+                        description={"What are your favourite songs?"}
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayFourDate.getDate().toString() +
+                            "/" +
+                            (dayFourDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "21":
+            if (currDate.getTime() >= dayFourDate.getTime())
+                return (
+                    <Question
+                        index={21}
+                        CORRECT={process.env.NEXT_PUBLIC_Q21}
+                        question={
+                            "Is π equal to e? Answer 'Yes' or 'No', without the ''."
+                        }
+                        description={"@engineers 👀"}
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayFourDate.getDate().toString() +
+                            "/" +
+                            (dayFourDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "22":
+            if (currDate.getTime() >= dayFourDate.getTime())
+                return (
+                    <Question
+                        index={22}
+                        CORRECT={process.env.NEXT_PUBLIC_Q22}
+                        question={
+                            "A and B are two different smartphone manufacturers. B can choose whether to sell its latest product. A, if B decides to sell its latest product, can choose whether to sell its own latest product at a higher price, lower price, or the same price as B's latest product. If B decides not to sell, A has the same choices as if B decides to sell. How many different permutations of choices does A have for across the two cases (e.g. one permutation is 'sell at higher price if B sells, sell at lower price if B doesn't sell')?"
+                        }
+                        description={"Another Game Theory-esque question 😜"}
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayFourDate.getDate().toString() +
+                            "/" +
+                            (dayFourDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "23":
+            if (currDate.getTime() >= dayFourDate.getTime())
+                return (
+                    <Question
+                        index={23}
+                        CORRECT={process.env.NEXT_PUBLIC_Q23}
+                        question={
+                            "From x = -3 to x = 3 (inclusive), is the area under y = x^2 more than the area of a trapezium of parallel sides of lengths 6 and 10 units separated by a perpendicular distance of 2 units? Answer 'Yes' or 'No', without the ''."
+                        }
+                        description={
+                            "Some light integration for those who love calculus!"
+                        }
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayFourDate.getDate().toString() +
+                            "/" +
+                            (dayFourDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "24":
+            if (currDate.getTime() >= dayFourDate.getTime())
+                return (
+                    <Question
+                        index={24}
+                        CORRECT={process.env.NEXT_PUBLIC_Q24}
+                        question={
+                            "Given that I is directly proportional to A^2 and that I = 5 when A = 25, what is I when A^3 = 343"
+                        }
+                        description={"Hey, Physics friends! Get the reference?"}
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayFourDate.getDate().toString() +
+                            "/" +
+                            (dayFourDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "25":
+            if (currDate.getTime() >= dayFiveDate.getTime())
+                return (
+                    <Question
+                        index={25}
+                        CORRECT={process.env.NEXT_PUBLIC_Q25}
+                        question={
+                            "Solve for |a| where (24x^2 + 25x - 47)/(ax - 2) = -8x - 3 - 53/(ax - 2)"
+                        }
+                        description={"Algebra is always fun!"}
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            dayFiveDate.getDate().toString() +
+                            "/" +
+                            (dayFiveDate.getMonth() + 1)
+                        ).toString()}
+                    />
+                );
+            }
+        case "26":
+            if (currDate.getTime() >= daySixDate.getTime())
+                return (
+                    <Question
+                        index={26}
+                        CORRECT={process.env.NEXT_PUBLIC_Q26}
+                        question={
+                            "Given a circle inscribed in a square with sides of length 2 units, what is the four times the probability that a dart thrown towards the shape will land inside the inscribed circle (leave your answer in 3sf)?"
+                        }
+                        description={"🎉 π 🎉"}
+                    />
+                );
+            else {
+                return (
+                    <Later
+                        date={(
+                            daySixDate.getDate().toString() +
+                            "/" +
+                            (daySixDate.getMonth() + 1)
                         ).toString()}
                     />
                 );

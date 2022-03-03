@@ -52,7 +52,7 @@ const Home: NextPage = () => {
                         <>
                             <input
                                 type="text"
-                                placeholder="The Code (26 Letters)..."
+                                placeholder="The 26 Letters..."
                                 value={answer}
                                 onChange={(e) => setAnswer(e.target.value)}
                                 className={styles.input}

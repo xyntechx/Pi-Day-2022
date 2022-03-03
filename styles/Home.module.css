@@ -77,7 +77,8 @@
     cursor: default;
 }
 
-.input {
+.input,
+.jokeInput {
     border: black solid 0.1rem;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -88,7 +89,12 @@
     margin: 1rem;
 }
 
-.input:focus {
+.jokeInput {
+    width: 30rem;
+}
+
+.input:focus,
+.jokeInput:focus {
     outline: none;
     background-color: rgb(245 158 11);
 }
@@ -106,8 +112,13 @@
 
     .text,
     .input,
+    .jokeInput,
     .button {
         font-size: 1rem;
+    }
+
+    .jokeInput {
+        width: 20rem;
     }
 
     .text {
@@ -128,5 +139,9 @@
 
     .days {
         column-gap: 1rem;
+    }
+
+    .jokeInput {
+        width: 15rem;
     }
 }

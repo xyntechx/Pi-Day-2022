@@ -36,7 +36,7 @@ const Days: NextPage = () => {
                 >
                     <a
                         className={
-                            currDate.getTime() >= dayTwoDate.getTime()
+                            currDate.getTime() >= dayOneDate.getTime()
                                 ? styles.day
                                 : styles.disabled
                         }

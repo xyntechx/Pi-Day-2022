@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Days from "../components/days";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 
@@ -77,6 +78,30 @@ const Home: NextPage = () => {
                     ) : (
                         <></>
                     )}
+                    <div className={styles.logos}>
+                        <Link href="https://xyntechx.netlify.app/">
+                            <a target="_blank">
+                                <Image
+                                    src="/logo.png"
+                                    alt="xyntechx"
+                                    width={70}
+                                    height={70}
+                                    className={styles.logo}
+                                />
+                            </a>
+                        </Link>
+                        <Link href="https://github.com/xyntechx">
+                            <a target="_blank">
+                                <Image
+                                    src="/github.png"
+                                    alt="xyntechx GitHub"
+                                    width={70}
+                                    height={70}
+                                    className={styles.logo}
+                                />
+                            </a>
+                        </Link>
+                    </div>
                 </>
             )}
         </main>

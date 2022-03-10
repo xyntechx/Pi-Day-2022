@@ -258,7 +258,7 @@ const Quiz: NextPage = () => {
                         index={11}
                         CORRECT={process.env.NEXT_PUBLIC_Q11}
                         question={
-                            "Don ran with a velocity v = x² - 7x, where x is the displacement in metres with respect to his starting point where he was stationary (x >= 7). What is his acceleration in m/s² when v = 8 m/s?"
+                            "Don ran with a velocity v = x² - 7x, where x is time in seconds. What is his acceleration in m/s² when v = 8 m/s?"
                         }
                         description={"NAPFA 🤯"}
                     />

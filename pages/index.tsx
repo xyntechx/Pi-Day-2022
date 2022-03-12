@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                         <></>
                     )}
                     <div className={styles.logos}>
-                        <Link href="https://xyntechx.netlify.app/">
+                        <Link href="https://xyntechx.com/">
                             <a target="_blank">
                                 <Image
                                     src="/logo.png"
